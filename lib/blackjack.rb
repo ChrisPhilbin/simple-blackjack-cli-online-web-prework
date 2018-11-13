@@ -39,7 +39,7 @@ def hit?(card_total)
   if input == "h"
     card_total += deal_card
   elsif input == "s"
-    card_total
+    prompt_user
   else
     invalid_command
     prompt_user
@@ -56,10 +56,7 @@ end
 
 def runner
   welcome
-  initial_round
-  until initial_round == 21 do
-    hit?(initial_round)
-    display_card_total
-  end
-  end_game
+  card_total = initial_round #returns sum of first two cards dealt
+  hit?(card_total) # call hit method, passing initial round sum in
+
 end
