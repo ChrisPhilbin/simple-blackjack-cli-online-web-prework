@@ -57,6 +57,8 @@ end
 def runner
   welcome
   card_total = initial_round #returns sum of first two cards dealt
-  hit?(card_total) # call hit method, passing initial round sum in
-
+  until card_total == 21 do
+    hit?(card_total) # call hit method, passing initial round sum in
+  end
+  end_game
 end
